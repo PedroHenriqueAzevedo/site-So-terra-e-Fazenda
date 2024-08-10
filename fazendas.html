@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazendas - Venda de Propriedades</title>
+    <link rel="stylesheet" href="arquivos.css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="images/logoooo.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="images/logo2.png" alt="Logo da Venda de Propriedades" class="logo">
+            <h1>So Terra e Fazendas</h1>
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <button class="close-menu" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="fazendas.html"><i class="fas fa-landmark"></i> Fazendas</a></li>
+                <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section id="fazenda1" class="farm-container">
+            <h2>Fazenda 1</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/fazenda1-1.jpg" alt="Fazenda 1 - Imagem 1">
+                    <p>Vista da nossa primeira fazenda.</p>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/fazenda1-2.jpg" alt="Fazenda 1 - Imagem 2">
+                    <p>Detalhes da propriedade.</p>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide('fazenda1', 1)"></span>
+                    <span class="dot" onclick="currentSlide('fazenda1', 2)"></span>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section id="fazenda2" class="farm-container">
+            <h2>Fazenda 2</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/fazenda2-1.jpg" alt="Fazenda 2 - Imagem 1">
+                    <p>Explore a beleza da nossa segunda fazenda.</p>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/fazenda2-2.jpg" alt="Fazenda 2 - Imagem 2">
+                    <p>Vista panorâmica da fazenda.</p>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide('fazenda2', 1)"></span>
+                    <span class="dot" onclick="currentSlide('fazenda2', 2)"></span>
+                </div>
+            </div>
+           
+        </section>
+        <div class="section-divider"></div>
+        <section id="fazenda3" class="farm-container">
+            <h2>Fazenda 3</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/fazenda3-1.jpg" alt="Fazenda 3 - Imagem 1">
+                    <p>Descubra a tranquilidade da terceira fazenda.</p>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/fazenda3-2.jpg" alt="Fazenda 3 - Imagem 2">
+                    <p>Detalhes encantadores da fazenda.</p>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide('fazenda3', 1)"></span>
+                    <span class="dot" onclick="currentSlide('fazenda3', 2)"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://wa.me/5563992313296" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/phazevedo00" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.google.com/maps/place/Av.+Anhanguera+-+Jardim+Novo+Mundo,+Goiânia+-+GO,+74705-015" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+            <h3>© 2024 So Terra e Fazendas. Todos os direitos reservados.</h3>
+        </div>
+    </footer>
+    <script src="arquivos.js/menu.js"></script>
+    <script src="arquivos.js/slideshow.js"></script>
+</body>
+</html>

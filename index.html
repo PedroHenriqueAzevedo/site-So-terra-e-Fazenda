@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>So Terra e Fazendas - Início</title>
+    <link rel="stylesheet" href="arquivos.css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="images/logoooo.ico" type="image/x-icon">
+    <script src="arquivos.js/menu.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <img src="images/logo.png" alt="Logo da Venda de Fazendas" class="logo">
+            <h1>So Terra e Fazendas</h1>
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <button class="close-menu" id="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="fazendas.html"><i class="fas fa-tractor"></i> Fazendas</a></li>
+                <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <section id="home" class="hero">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/fazenda1.jpg" alt="Fazenda 1">
+                    <p>Conheça nossa primeira fazenda.</p>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/fazenda2.jpg" alt="Fazenda 2">
+                    <p>Explore a beleza da nossa segunda fazenda.</p>
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/fazenda3.jpg" alt="Fazenda 3">
+                    <p>Descubra a tranquilidade da terceira fazenda.</p>
+                </div>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section id="about">
+            <div class="container">
+                <h2>Sobre a Venda de Fazendas</h2>
+                <div class="content">
+                    <img src="images/fazenda-info.jpg" alt="Fazendas disponíveis" class="service-image">
+                    <p>Oferecemos uma seleção de fazendas para compra, cada uma com características únicas e localizações privilegiadas.</p>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bem-vindo à Venda de Fazendas</h2>
+                <a href="https://wa.me/5562993041755?text=quero+mais+informações+sobre+as+fazendas" class="button">Solicitar Informações</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://wa.me/5563992313296" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/phazevedo00" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.google.com/maps/place/Av.+Anhanguera" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+            </div>
+            <h3>© 2024 So Terra e Fazendas. Todos os direitos reservados.</h3>
+        </div>
+    </footer>
+    <script src="arquivos.js/slideshow.js" defer></script>
+</body>
+</html>
