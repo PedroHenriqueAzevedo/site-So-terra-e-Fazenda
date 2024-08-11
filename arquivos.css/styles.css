@@ -1,6 +1,6 @@
 :root {
     --primary-color: #2a9d8f;
-    --secondary-color: #006400;
+    --secondary-color: #e76f51;
     --text-color: #333;
     --light-bg: #bbf2ec;
     --dark-bg: #f4f4f4;
@@ -205,13 +205,13 @@ main {
     border-radius: var(--border-radius);
 }
 
-.mySlides,.mySlides2 {
+.mySlides {
     display: none;
     position: relative;
     width: 100%;
 }
 
-.mySlides,.mySlides2 img {
+.mySlides img {
     width: 100%;
     height: auto;
     max-height: 500px;
@@ -219,12 +219,12 @@ main {
     border-radius: var(--border-radius);
 }
 
-.dots ,.dots2{
+.dots {
     text-align: center;
     padding: 10px 0;
 }
 
-.dot,.dot2 {
+.dot {
     height: 12px;
     width: 12px;
     margin: 0 4px;
@@ -386,7 +386,7 @@ footer h3 {
 }
 
 .button:hover {
-    background-color: #8bf007;
+    background-color: #e15b4e;
     transform: translateY(-3px);
 }
 
