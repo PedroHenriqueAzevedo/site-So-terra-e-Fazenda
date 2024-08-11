@@ -6,8 +6,8 @@
     --dark-bg: #f4f4f4;
     --border-radius: 20px;
     --shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    --button-color:  #1f7a6d; /* Verde para botões */
-    --button-hover-color: #0e4203; /* Verde escuro para hover */
+    --button-color:  #0e4203; /* Verde para botões */
+    --button-hover-color: #30d80e; /* Verde escuro para hover */
 }
 
 * {
