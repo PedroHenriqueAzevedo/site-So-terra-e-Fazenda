@@ -14,7 +14,7 @@ function showSlides2() {
     }
     slides2[slideIndex2-1].style.display = "block";  
     dots2[slideIndex2-1].className += " active";
-    setTimeout(showSlides2, 4000); 
+    setTimeout(showSlides2, 4000); // Change slide every 4 seconds
 }
 
 function currentSlide2(n) {
@@ -25,6 +25,7 @@ function currentSlide2(n) {
     }
     slideIndex2 = n;
     if (slideIndex2 > slides2.length) {slideIndex2 = 1}    
+    if (slideIndex2 < 1) {slideIndex2 = slides2.length;} 
     for (let i = 0; i < dots2.length; i++) {
         dots2[i].className = dots2[i].className.replace(" active", "");
     }
