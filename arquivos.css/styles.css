@@ -205,13 +205,13 @@ main {
     border-radius: var(--border-radius);
 }
 
-.mySlides {
+.mySlides,.mySlides2 {
     display: none;
     position: relative;
     width: 100%;
 }
 
-.mySlides img {
+.mySlides,.mySlides2 img {
     width: 100%;
     height: auto;
     max-height: 500px;
@@ -219,12 +219,12 @@ main {
     border-radius: var(--border-radius);
 }
 
-.dots {
+.dots ,.dots2{
     text-align: center;
     padding: 10px 0;
 }
 
-.dot {
+.dot,.dot2 {
     height: 12px;
     width: 12px;
     margin: 0 4px;
