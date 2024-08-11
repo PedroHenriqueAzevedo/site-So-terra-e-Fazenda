@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     let slideIndex = 0;
     let slideTimeout;
-    let testimonialIndex = 0;
-    let testimonialTimeout;
 
     function showSlides() {
         let slides = document.querySelectorAll(".mySlides");
@@ -22,25 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         showSlides();
     }
 
-    function showTestimonials() {
-        let testimonials = document.querySelectorAll(".testimonialSlides");
-        let testimonialDots = document.querySelectorAll(".testimonial-dot");
-        testimonials.forEach(testimonial => testimonial.style.display = "none");
-        testimonialDots.forEach(dot => dot.className = dot.className.replace(" active", ""));
-        testimonialIndex++;
-        if (testimonialIndex > testimonials.length) { testimonialIndex = 1; }
-        testimonials[testimonialIndex - 1].style.display = "block";
-        testimonialDots[testimonialIndex - 1].className += " active";
-        testimonialTimeout = setTimeout(showTestimonials, 4000);
-    }
-
-    window.currentTestimonialSlide = function(n) {
-        clearTimeout(testimonialTimeout);
-        testimonialIndex = n - 1;
-        showTestimonials();
-    }
     let slideshowContainer = document.querySelector('.slideshow-container');
-    let testimonialSlideshowContainer = document.querySelector('.testimonial-slideshow-container');
 
     if (slideshowContainer) {
         let hammer = new Hammer(slideshowContainer);
@@ -60,24 +40,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    if (testimonialSlideshowContainer) {
-        let hammerTestimonial = new Hammer(testimonialSlideshowContainer);
-        hammerTestimonial.on('swipeleft', () => {
-            clearTimeout(testimonialTimeout);
-            testimonialIndex++;
-            if (testimonialIndex > document.querySelectorAll(".testimonialSlides").length) { testimonialIndex = 1; }
-            updateTestimonials();
-            testimonialTimeout = setTimeout(showTestimonials, 5000);
-        });
-        hammerTestimonial.on('swiperight', () => {
-            clearTimeout(testimonialTimeout);
-            testimonialIndex--;
-            if (testimonialIndex < 1) { testimonialIndex = document.querySelectorAll(".testimonialSlides").length; }
-            updateTestimonials();
-            testimonialTimeout = setTimeout(showTestimonials, 5000); 
-        });
-    }
-
     function updateSlides() {
         let slides = document.querySelectorAll(".mySlides");
         let dots = document.querySelectorAll(".dot");
@@ -87,15 +49,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         dots[slideIndex - 1].className += " active";
     }
 
-    function updateTestimonials() {
-        let testimonials = document.querySelectorAll(".testimonialSlides");
-        let testimonialDots = document.querySelectorAll(".testimonial-dot");
-        testimonials.forEach(testimonial => testimonial.style.display = "none");
-        testimonialDots.forEach(dot => dot.className = dot.className.replace(" active", ""));
-        testimonials[testimonialIndex - 1].style.display = "block";
-        testimonialDots[testimonialIndex - 1].className += " active";
-    }
-
     showSlides();
-    showTestimonials();
 });
