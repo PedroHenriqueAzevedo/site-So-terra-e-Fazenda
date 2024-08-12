@@ -1,60 +1,53 @@
-let slideIndex2 = 0;
-let autoSlideInterval;
-let isManualControl = false;
+document.addEventListener('DOMContentLoaded', (event) => {
+    let slideIndex2 = 0;
+    let slideTimeout2;
 
-function startSlideShow() {
-    autoSlideInterval = setInterval(showSlides2, 4000); 
-}
-
-function stopSlideShow() {
-    clearInterval(autoSlideInterval);
-}
-
-function showSlides2() {
-    if (isManualControl) return; 
-
-    let slides2 = document.getElementsByClassName("mySlides2");
-    let dots2 = document.getElementsByClassName("dot2");
-    
-    for (let i = 0; i < slides2.length; i++) {
-        slides2[i].style.display = "none";  
+    function showSlides2() {
+        let slides2 = document.querySelectorAll(".mySlides2");
+        let dots2 = document.querySelectorAll(".dot2");
+        slides2.forEach(slide => slide.style.display = "none");
+        dots2.forEach(dot => dot.className = dot.className.replace(" active", ""));
+        slideIndex2++;
+        if (slideIndex2 > slides2.length) { slideIndex2 = 1; }
+        slides2[slideIndex2 - 1].style.display = "block";
+        dots2[slideIndex2 - 1].className += " active";
+        slideTimeout2 = setTimeout(showSlides2, 4000);
     }
-    
-    slideIndex2++;
-    if (slideIndex2 > slides2.length) { slideIndex2 = 1; }    
-    
-    for (let i = 0; i < dots2.length; i++) {
-        dots2[i].className = dots2[i].className.replace(" active", "");
-    }
-    
-    slides2[slideIndex2-1].style.display = "block";  
-    dots2[slideIndex2-1].className += " active";
-}
 
-function currentSlide2(n) {
-    let slides2 = document.getElementsByClassName("mySlides2");
-    let dots2 = document.getElementsByClassName("dot2");
-    
-    for (let i = 0; i < slides2.length; i++) {
-        slides2[i].style.display = "none";  
+    window.currentSlide2 = function(n) {
+        clearTimeout(slideTimeout2);
+        slideIndex2 = n - 1;
+        showSlides2();
     }
-    slideIndex2 = n;
-    if (slideIndex2 > slides2.length) { slideIndex2 = 1; }    
-    if (slideIndex2 < 1) { slideIndex2 = slides2.length; } 
-    
-    for (let i = 0; i < dots2.length; i++) {
-        dots2[i].className = dots2[i].className.replace(" active", "");
-    }
-    
-    slides2[slideIndex2-1].style.display = "block";  
-    dots2[slideIndex2-1].className += " active";
-    
-    stopSlideShow();
-    isManualControl = true;
-}
 
-document.addEventListener('DOMContentLoaded', function() {
-   
+    let slideshowContainer2 = document.querySelector('.slideshow-container2');
+
+    if (slideshowContainer2) {
+        let hammer = new Hammer(slideshowContainer2);
+        hammer.on('swipeleft', () => {
+            clearTimeout(slideTimeout2);
+            slideIndex2++;
+            if (slideIndex2 > document.querySelectorAll(".mySlides2").length) { slideIndex2 = 1; }
+            updateSlides2();
+            slideTimeout2 = setTimeout(showSlides2, 5000);
+        });
+        hammer.on('swiperight', () => {
+            clearTimeout(slideTimeout2);
+            slideIndex2--;
+            if (slideIndex2 < 1) { slideIndex2 = document.querySelectorAll(".mySlides2").length; }
+            updateSlides2();
+            slideTimeout2 = setTimeout(showSlides2, 5000); 
+        });
+    }
+
+    function updateSlides2() {
+        let slides2 = document.querySelectorAll(".mySlides2");
+        let dots2 = document.querySelectorAll(".dot2");
+        slides2.forEach(slide => slide.style.display = "none");
+        dots2.forEach(dot => dot.className = dot.className.replace(" active", ""));
+        slides2[slideIndex2 - 1].style.display = "block";
+        dots2[slideIndex2 - 1].className += " active";
+    }
+
     showSlides2();
-    startSlideShow();
 });
