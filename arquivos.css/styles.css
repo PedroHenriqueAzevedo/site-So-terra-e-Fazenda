@@ -1,13 +1,11 @@
 :root {
-    --primary-color: #2a9d8f; /* Verde padrão */
-    --secondary-color: #0e4203;
+    --primary-color: #2a9d8f;
+    --secondary-color: #e76f51;
     --text-color: #333;
     --light-bg: #bbf2ec;
     --dark-bg: #f4f4f4;
     --border-radius: 20px;
     --shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    --button-color:  #0e4203; /* Verde para botões */
-    --button-hover-color: #30d80e; /* Verde escuro para hover */
 }
 
 * {
@@ -199,7 +197,7 @@ main {
     transform: scale(1.05);
 }
 
-.slideshow-container, .slideshow-container2 {
+.slideshow-container {
     position: relative;
     width: 100%;
     max-width: 100%;
@@ -207,28 +205,26 @@ main {
     border-radius: var(--border-radius);
 }
 
-.mySlides, .mySlides2 {
-    display: none; /* Esconde as imagens por padrão */
+.mySlides {
+    display: none;
+    position: relative;
     width: 100%;
 }
 
-.mySlides img, .mySlides2 img {
+.mySlides img {
     width: 100%;
     height: auto;
-    max-height: 500px; /* Ajuste conforme necessário */
+    max-height: 500px;
     object-fit: cover;
     border-radius: var(--border-radius);
 }
 
-.dots, .dots2 {
-    position: absolute;
-    bottom: 10px; /* Ajuste conforme necessário */
-    width: 100%;
+.dots {
     text-align: center;
-    z-index: 10; /* Garante que as bolinhas fiquem acima do conteúdo do slideshow */
+    padding: 10px 0;
 }
 
-.dot, .dot2 {
+.dot {
     height: 12px;
     width: 12px;
     margin: 0 4px;
@@ -238,7 +234,7 @@ main {
     transition: background-color 0.6s ease;
 }
 
-.dot.active, .dot2.active {
+.dot.active {
     background-color: var(--secondary-color);
 }
 
@@ -251,9 +247,29 @@ main {
     to { opacity: 1; }
 }
 
-.testimonial-dots {
+.testimonialSlides {
+    display: none;
+    position: relative;
+    width: 80%;
+    max-width: 800px; 
+    padding: 20px;
+    background-color: var(--light-bg);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     text-align: center;
-    padding: 10px 0;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.testimonial-dots {
+    position: absolute; /* Posiciona as bolinhas fora da imagem */
+    bottom: 20px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 0;
+    z-index: 1000;
 }
 
 .testimonial-dot {
@@ -339,47 +355,86 @@ footer {
     border-top-right-radius: 50% 10%;
 }
 
-footer .social-media {
-    margin-bottom: 20px;
-}
-
-footer .social-media a {
-    color: #fff;
+footer h3 {
     font-size: 24px;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-
-footer .social-media a:hover {
-    color: var(--secondary-color);
-}
-
-footer .contact-info {
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-bottom: 20px;
 }
 
-footer .contact-info p {
-    font-size: 1.1em;
-    margin: 5px 0;
+.social-icons {
+    margin-top: 20px;
 }
 
-button, .button {
-    background-color: var(--button-color);
+.social-icons a {
     color: #fff;
-    border: none;
-    border-radius: var(--border-radius);
-    padding: 20px 40px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 32px;
+    transition: transform 0.3s;
 }
 
-button:hover, .button:hover {
-    background-color: var(--button-hover-color);
+.social-icons a:hover {
+    transform: scale(1.2);
 }
 
-button:focus, .button:focus {
-    outline: none;
-    box-shadow: 0 0 5px var(--button-hover-color);
+.button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-decoration: none; 
+    padding: 16px 32px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 
+.button:hover {
+    background-color: #e15b4e;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+
+    .header-content {
+        padding: 0 10px; 
+        margin-left: -5px; 
+        margin-right: -10px;
+    }
+    .header-content h1 {
+        text-align: center;
+        font-size: 1.8em;
+    }
+    .container {
+        width: 90%;
+    }
+    .sidebar {
+        width: 200px;
+    }
+    .sidebar.active {
+        right: 0;
+    }
+    main {
+        margin-right: 0;
+        padding: 20px;
+    }
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .mySlides img {
+        height: auto;
+        max-height: 300px;
+    }
+}
