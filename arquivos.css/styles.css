@@ -72,6 +72,8 @@ header {
 .sidebar {
     width: 250px;
     background-image: url('../images/imagemfundo.jpg');
+    background-size: cover;
+    background-position: center;
     position: fixed;
     top: 0;
     right: -250px;
