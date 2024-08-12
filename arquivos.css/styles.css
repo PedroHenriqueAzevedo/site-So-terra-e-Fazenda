@@ -1,6 +1,6 @@
 :root {
     --primary-color: #2a9d8f;
-    --secondary-color: #e76f51;
+    --secondary-color:#004d00 ;
     --text-color: #333;
     --light-bg: #bbf2ec;
     --dark-bg: #f4f4f4;
@@ -424,7 +424,7 @@ footer h3 {
 }
 
 .button:hover {
-    background-color: #e15b4e;
+    background-color:  #008000;
     transform: translateY(-3px);
 }
 
