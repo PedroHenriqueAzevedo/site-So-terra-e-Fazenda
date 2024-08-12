@@ -204,13 +204,23 @@ main {
     overflow: hidden;
     border-radius: var(--border-radius);
 }
-
+.slideshow-container2 {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
 .mySlides {
     display: none;
     position: relative;
     width: 100%;
 }
-
+.mySlides2 {
+    display: none;
+    position: relative;
+    width: 100%;
+}
 .mySlides img {
     width: 100%;
     height: auto;
@@ -218,7 +228,13 @@ main {
     object-fit: cover;
     border-radius: var(--border-radius);
 }
-
+.mySlides2 img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
 .dots {
     text-align: center;
     padding: 10px 0;
@@ -233,8 +249,19 @@ main {
     display: inline-block;
     transition: background-color 0.6s ease;
 }
-
+.dot2 {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
 .dot.active {
+    background-color: var(--secondary-color);
+}
+.dot2.active {
     background-color: var(--secondary-color);
 }
 
