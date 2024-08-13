@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
             slideIndex++;
             if (slideIndex > document.querySelectorAll(".mySlides").length) { slideIndex = 1; }
             updateSlides();
-            slideTimeout = setTimeout(showSlides, 5000);
+            slideTimeout = setTimeout(showSlides, 4000);
         });
         hammer.on('swiperight', () => {
             clearTimeout(slideTimeout);
             slideIndex--;
             if (slideIndex < 1) { slideIndex = document.querySelectorAll(".mySlides").length; }
             updateSlides();
-            slideTimeout = setTimeout(showSlides, 5000); 
+            slideTimeout = setTimeout(showSlides, 4000); 
         });
     }
 
